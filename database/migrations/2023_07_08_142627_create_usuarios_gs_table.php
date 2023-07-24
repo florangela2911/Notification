@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('usuarios_gs', function (Blueprint $table) {
-           
+
             $table->id();
+            $table->integer('nro_hist')->unique();
             $table->string('historia');
             $table->date('fechacita');
             $table->time('hora');

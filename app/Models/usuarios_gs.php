@@ -10,6 +10,7 @@ class usuarios_gs extends Model
     use HasFactory;
     protected $fillable = [
         'id',
+        'nro_hist',
         'historia',
         'fechacita',
         'hora',
@@ -21,6 +22,7 @@ class usuarios_gs extends Model
     ];
 
     protected $guarded = [];
-}    
 
-    
+    protected $dates = ['fechacita'];
+}
+

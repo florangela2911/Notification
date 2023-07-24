@@ -1,6 +1,3 @@
-@extends('layouts.imp')
-@section('content')
-
 <x-app-layout>
     <div class="py-4">
     <div class="card m-5">
@@ -8,17 +5,17 @@
         <div>
 
           <p>
-              Buen dia, 
+              Buen dia,<br>
 
-              Me permito informar que la cita solicitada para el paciente {{$base-> historia}}. quedo asignada de la siguente manera: <br>
+              Me permito informar que la cita solicitada para el paciente {{$row[2]}}. Quedo asignada de la siguiente manera: <br>
           </p>
           <p>
-              Servicio: {{$base->procedim }} <br>
-              Fecha: {{$base->fechacita}} <br>
-              Hora: {{$base->horacita}} <br>
-              Profesional: {{$base->nombre }} <br>
-              Sede: {{$base->sede }} <br>
-              Direccion: {{$base->direccion }} <br>
+              Servicio: {{$row[15] }} <br>
+              Fecha: {{$row[8]}} <br>
+              Hora: {{$row[9]}} <br>
+              Profesional: {{$row[11] }} <br>
+              Sede: {{$row[32] }} <br>
+              Direccion: {{$row[33] }} <br>
           </p>
           <b>
               Recuerde llevar la documentacion completa, feliz dia!!
@@ -26,11 +23,8 @@
       </div>
      </div>
     </div>
-   </div> 
+   </div>
 
   <script src="/resources/js/script.js"></script>
 </x-app-layout>
-
-
-@endsection
 

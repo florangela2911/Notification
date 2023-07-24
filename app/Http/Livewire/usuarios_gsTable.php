@@ -85,6 +85,7 @@ final class usuarios_gsTable extends PowerGridComponent
     {
         return PowerGrid::columns()
             ->addColumn('id')
+            ->addColumn('nro_hist')
             ->addColumn('name')
 
            /** Example of custom column using a closure **/
@@ -112,6 +113,7 @@ final class usuarios_gsTable extends PowerGridComponent
     {
         return [
             Column::make('Id', 'id'),
+            Column::make('# Historia', 'nro_hist'),
             Column::make('nombre', 'historia')
                 ->sortable()
                 ->searchable(),
@@ -158,6 +160,7 @@ final class usuarios_gsTable extends PowerGridComponent
     public function filters(): array
     {
         return [
+            Filter::inputText('nro_hist')->operators(['contains']),
             Filter::inputText('historia')->operators(['contains']),
             Filter::inputText('fechacita')->operators(['contains']),
             Filter::inputText('hora')->operators(['contains']),

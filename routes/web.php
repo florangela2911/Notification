@@ -27,7 +27,7 @@ Route::get('/mail', [ExpenseReportController::class, 'expenseReport'])->name('ma
 
 Route::get('/Notification', [NotificationController::class, 'notification'])->name('Notification.notification');
 
-Route::get('/import.data', [NotificationController::class, 'importarDatos'])->name('import.data');
+Route::post('/import.data', [NotificationController::class, 'importarDatos'])->name('import.data');
 
 Route::get('/exportar', [NotificationController::class, 'exportar'])->name('/exportar');
 

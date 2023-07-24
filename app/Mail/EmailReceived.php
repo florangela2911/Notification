@@ -6,6 +6,7 @@ use App\Models\usuarios_gs;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -15,16 +16,14 @@ class EmailReceived extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $base;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(usuarios_gs $base)
+    public function __construct(private $row)
     {
-        $this->base = $base;
     }
 
 
@@ -34,7 +33,7 @@ class EmailReceived extends Mailable
     }
 
 
-   
+
     /**
      * Get the message envelope.
      *
@@ -43,7 +42,8 @@ class EmailReceived extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Email Received',
+            from: new Address(env('MAIL_FROM_ADDRESS'), 'SIREB LTDA'),
+            subject: 'Asignacion de Cita',
         );
     }
 
@@ -55,7 +55,8 @@ class EmailReceived extends Mailable
     public function content()
     {
         return new Content(
-            view: 'view.name',
+            view: 'mail.expenseReport',
+            with: ['row' => $this->row],
         );
     }
 
@@ -68,5 +69,5 @@ class EmailReceived extends Mailable
     {
         return [];
     }
-    
+
 }
