@@ -24,20 +24,6 @@ return [
     */
 
     'plugins' => [
-        /*
-         * https://flatpickr.js.org
-         */
-        'flatpickr' => [
-            'locales' => [
-                'pt_BR' => [
-                    'locale'     => 'pt',
-                    'dateFormat' => 'd/m/Y H:i',
-                    'enableTime' => true,
-                    'time_24hr'  => true,
-                ],
-            ],
-        ],
-
         'select' => [
             'default' => 'tom',
 

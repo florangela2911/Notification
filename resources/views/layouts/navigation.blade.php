@@ -18,15 +18,10 @@
                     <x-nav-link :href="route('Notification.notification')" :active="request()->routeIs('Notification.notification')">
                         {{ __('Import') }}
                     </x-nav-link>
-
-                    <x-nav-link :href="route('mail.expenseReport')" :active="request()->routeIs('mail.expenseReport')">
-                        {{ __('Email') }}
-                    </x-nav-link>
-
                 </div>
             </div>
 
-            
+
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -84,11 +79,7 @@
             <x-nav-link :href="route('Notification.notification')" :active="request()->routeIs('Notification.notification')">
                 {{ __('Notification') }}
             </x-nav-link>
-            <x-nav-link :href="route('mail.expenseReport')" :active="request()->routeIs('mail.expenseReport')">
-                {{ __('Email') }}
-            </x-nav-link>
 
-           
 
             <x-nav-link :href="route('Users.usersC')" :active="request()->routeIs('Users.usersC')">
                 {{ __('Users') }}
